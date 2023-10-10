@@ -31,7 +31,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -54,7 +54,7 @@ main img {
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 20px 20px;
   text-align: center;
 }
 
@@ -62,6 +62,14 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
+  text-align: center; 
+}
+
+#menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px 0 0 0; 
 }
 
 header nav ul li {
@@ -74,10 +82,16 @@ header nav ul li a {
   padding: 0 20px 0 0;
 }
 
+header nav ul li:last-child a {
+  margin-right: 0; 
+}
+
 header nav ul li a:hover {
   color: #bdbdbd;
   text-decoration: none;
 }
+
+
 
 /* -------  Search Form ------- */
 form {
@@ -104,6 +118,13 @@ form button {
   width: 100%;
 }
 
+form div{
+  display: flex; 
+  justify-content: space-between;
+}
+
+
+
 /* -------  Footer ------- */
 
 footer {
@@ -117,3 +138,85 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo{
+    font-size: 62px;
+  }
+
+  form {
+   display: flex; 
+   justify-content: space-between;
+   gap: 10px;
+
+  }
+
+  form div{ 
+    flex-direction: column;
+    width: 15%; 
+  }
+
+  form button{
+    max-width: 150px; 
+  }
+
+  form div input, form div select {
+    width: 95%;
+    font-size: 90%;
+  }
+
+  #about div{
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+  }
+
+  #about div img{
+    flex: 1; 
+    width: 25%; 
+  }
+
+  #about div p{
+    flex: 2; 
+  }
+
+  #ideas>div{
+    display: flex;
+    gap: 10px;
+  }
+  #ideas>div>div{
+    flex: 1; 
+  }
+
+  #host>div{
+    display: flex; 
+    gap: 10px; 
+    align-items: center;
+  }
+
+  #host>div>div{
+    width: 50%; 
+  }
+
+  #host>div>div>h2{
+    font-size: 16px;
+  }
+  #host>div>div>p, #host>div>div>ul{
+    font-size: 12px;
+  }
+
+  #host>div>img{
+    width: 50%; 
+  }
+
+}
+
+@media all and (max-width: 500px){
+  .logo{
+    font-size: 52px;
+  }
+}
